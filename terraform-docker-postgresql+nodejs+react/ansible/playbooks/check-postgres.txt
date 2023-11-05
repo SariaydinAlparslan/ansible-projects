@@ -1,0 +1,10 @@
+ansible _ansible_postgresql -m shell -a "docker images"
+ansible _ansible_postgresql -m shell -a "docker ps"
+
+ansible _ansible_nodejs -m shell -a "sudo docker ps -a"
+ansible _ansible_nodejs -m shell -a "sudo docker images"
+
+curl --request POST \
+--url 'http://3.89.5.217:5000/todos' \      -> ip addres of nodejs
+--header 'content-type: application/json' \
+--data '{"description":"ansible project 207"}'
